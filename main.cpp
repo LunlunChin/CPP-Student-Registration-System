@@ -1,20 +1,32 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
+#include <windows.h> 
 #include "Student.h"
+#include "courseList.h"
 
 using namespace std;
 
 Student login();
 void registr();
 void displayMainMenu();
-void buildCourse();
-void selectCourse(int);
+void buildCourse(string[], int[]);
+int selectCourse(string[]);
+
+
 int main(){
+	HANDLE  hConsole;
+	  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	 
+	  SetConsoleTextAttribute(hConsole, 10);
+	string course[14];
+	int unit[14];
+	courseList * courseList1=new courseList;
 	Student student1;
-	buildCourse();
+	buildCourse(course,unit);
 	
 	int choice;
+	
 	cout<<"****************************\n";
 	cout<<"************WELCOME*********\n";
 	cout<<"Menu\n";
@@ -38,7 +50,8 @@ int main(){
 	
 	int mainMenuChoice;
 		
-	
+	int i=0;
+	while(i==0) {
 	do {
 		
 			cin >> mainMenuChoice;
@@ -59,13 +72,18 @@ int main(){
 			}
 			
 		} while(mainMenuChoice < 1 || mainMenuChoice > 6);
-		
-			switch(mainMenuChoice){
+	
+	switch(mainMenuChoice){
 				case 1:
 						
 				case 2:
-					//student1.addCourse(selectCourse(mainMenuChoice));
-					selectCourse(mainMenuChoice);
+					
+					courseList1->insertCourse(selectCourse(course));
+					//system("cls");
+					courseList1->print();
+					displayMainMenu();
+					
+		
 					break;
 				case 3:
 					cout<<"coreect";
@@ -77,9 +95,15 @@ int main(){
 					cout<<"coreect";
 					break;
 				case 6:
-					cout<<"coreect";
+					i=1;
+					cout<< "\n\n\n\n\t\t=========================================================";
+					cout<< "\n\n\n\n\t\t===Thank you for using our program! Have a nice day!===";
+					cout<< "\n\n\n\n\t\t=========================================================";
 					break;
 			}
+			
+			
+		}
 }
 	
 	Student login(){
@@ -105,7 +129,7 @@ int main(){
 			Student student;
 			student.setName(user);
 			student.setMatric(pass);
-			cout<<"Hello"<<"null"<<"\n <LOGIN SUCCESSFUL> \n";
+			cout<<"\n <LOGIN SUCCESSFUL> \n";
 			cin.get();
 			
 			return student;
@@ -133,22 +157,10 @@ int main(){
 	}
 	
 	void displayMainMenu(){
-		
-	
-		
-		cout << "\n  << Course Registration System >>\n\n"
-	     << " 1)  Register a Course\n"
-	     << " 2)  Search Course\n" 
-	     << " 3)  List of Courses & Requirement\n"
-	     << " 4)  View summary my course\n"
-	     << " 5)  View activity log\n"
-	     << " 6)  Exit Program\n\n"
-	     << "Enter an option: ";
-	}
-	
-		void displayCourse(){
-		
-	
+		HANDLE  hConsole;
+	  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(hConsole, 14);
+
 		
 		cout << "\n  << Course Registration System >>\n\n"
 	     << " 1)  Register a Course\n"
@@ -160,60 +172,49 @@ int main(){
 	     << "Enter an option: ";
 	}
 	
+
 	
-	void buildCourse(){
+	void buildCourse(string course[], int unit[]){
 		
-    char fileName[]=".\\data\\CourseList.dat";
-	ifstream ifile(fileName);
+	ifstream ifile("CourseList.txt");
 	int catalog, credit;
 	string cname;
 	int ocNum=0;
-	int ecNum=0;
+	int ecNum=0;	
 	
 	while(ifile>>catalog>>cname>>credit){
 		switch (catalog){
 		case 1:
-			oc[ocNum++]=new ObligatoryCourse(cname, credit);
-			break;
-		case 2:
-			ec[ecNum++]=new ElectiveCourse(cname, credit);
+			course[ocNum++]=cname;
+			unit[ecNum++]=credit;
+		
 			break;
 		}
 	}
+	
+	
 	ifile.close();
 
 	
 }
 
-void selectCourse(int op){
-	int i, choice=-1;
-    switch(op)
-    {
-        case 1: 
-            cout<<"Please Choose 1 Major:\n";
-            while((choice>ocNum)||(choice<0)){
-                for(i=0;i<ocNum;i++){
-                    cout<<"\t"<<i+1<<"."<<*oc[i];
+int selectCourse(string course[]){
+	int k=14;
+	int choice=-1;
+
+            cout<<"Please Choose A Course:\n";
+            while((choice>k)||(choice<0)){
+                for(int i=0;i<k;i++){
+                    cout<<"\t"<<i+1<<"."<<course[i]<<endl;
                 }
                 cout<<"\tCancelling Add Course\n";
                 cout<<"Your Choices are:";
                 cin>>choice;
             }
-            if (choice!=0) return oc[choice-1];
-            break;
-        case 2: 
-            cout<<"Please Choose 1 Minor:\n";
-            while((choice>ecNum)||(choice<0)){
-                for(i=0;i<ecNum;i++){
-                    cout<<"\t"<<i+1<<"."<<*ec[i];
-                }
-                cout<<"\tCancelling Add Course\n";
-                cout<<"Your Choices are:";
-                cin>>choice;
-            }
-            if (choice!=0) return ec[choice-1];
-            break;
-    }
+            if (choice!=0) return choice-1;
+            
+      
+    
     
 }
 	

@@ -19,7 +19,8 @@ class Student
 		void setName(string);
 		string getMatric();
 		void setMatric(string);
-		//addCourse(Course *course);
+		void addCourse(int);
+		
 	protected:
 };
 

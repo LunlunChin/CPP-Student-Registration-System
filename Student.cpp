@@ -28,6 +28,9 @@ void Student::setMatric(string m){
 	matricNo=m;
 }
 
+void Student::addCourse(int n){
+	 	
+}
 
 
 

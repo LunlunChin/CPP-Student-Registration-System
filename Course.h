@@ -4,7 +4,8 @@
 class Course
 {
 	public:
-	protected:
+		void addCourse;
+		
 };
 
 #endif

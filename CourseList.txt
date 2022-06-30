@@ -1,0 +1,14 @@
+1 CPT111-Principles_of_Programming 3
+1 CPT113-Programming_Methodology_&_Data_Structures 3
+1 CAT201-Integrated_Software_Development_Workshop 2
+1 CPT212-Design_&_Analysis_of_Algorithms 4
+1 CST235-Principles_of_Computer_Networks_and_Information_Security 4
+1 CAT304-Group_Innovation_Project_and_Study_for_Sustainability_Intensive_Care_Unit 3
+1 CAT402-Professional_and_Technopreneurship_Development 2
+1 CPC251-Machine_Learning_&_Computational_Intelligence 3
+1 CPC316-Programming_Language_Implementation_&_Paradigms 3
+1 CSE242-Software_Requirement_Analysis_&_Modelling 3
+1 CSE341-Software_Design_&_Architecture 3
+1 CST236-Digital_Systems_Design 3
+1 HFF225-Philosophy_and_Current_Issues 2
+1 WUS101-Core_Entrepreneurship 2
