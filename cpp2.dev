@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=9
+UnitCount=5
 
 [VersionInfo]
 Major=1
@@ -80,28 +80,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit4]
-FileName=Course.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit5]
-FileName=Course.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
 [Unit6]
-FileName=Node.h
+FileName=courseList.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -111,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=Node.cpp
+FileName=courseList.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -131,6 +111,26 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit9]
+FileName=courseList.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=courseList.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
 FileName=courseList.cpp
 CompileCpp=1
 Folder=

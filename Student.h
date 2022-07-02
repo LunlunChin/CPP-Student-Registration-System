@@ -8,18 +8,18 @@ class Student
 {
 	
 	private:
-		 //Student *student;
+	
 		string name;
 		string matricNo;
 	public:
-		Student();
+		Student();//constructor
 		Student(string name_val, string matric_val);
 		
 		string getName();	  
 		void setName(string);
 		string getMatric();
 		void setMatric(string);
-		void addCourse(int);
+		
 		
 	protected:
 };

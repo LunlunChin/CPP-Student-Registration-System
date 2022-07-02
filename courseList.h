@@ -1,6 +1,7 @@
 #ifndef COURSELIST_H
 #define COURSELIST_H
 #include <iostream>
+#include <fstream>
 using namespace std;
 class Node
 {
@@ -32,6 +33,7 @@ class courseList{
 		~courseList();
 		
 		void insertCourse(int);
+		void deleteCourse(int);
 		void print();
 };
 
