@@ -71,7 +71,7 @@ int main(){
 				cin >> mainMenuChoice;
 			}
 			
-		} while(mainMenuChoice < 1 || mainMenuChoice > 6);
+		} while(mainMenuChoice < 1 || mainMenuChoice > 5);
 	
 	switch(mainMenuChoice){
 				case 1:
